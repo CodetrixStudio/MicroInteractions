@@ -84,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				6458BD6421A88DE2004B9CDA /* Extensions */,
-				6458BD5B21A87646004B9CDA /* Cells */,
 				6458BD5621A870CE004B9CDA /* Controllers */,
 				6458BD3C21A868D5004B9CDA /* AppDelegate.swift */,
 				6458BD4521A868D6004B9CDA /* Assets.xcassets */,
@@ -106,20 +105,18 @@
 			isa = PBXGroup;
 			children = (
 				6458BD5721A870FF004B9CDA /* TabBarController.swift */,
-				6458BD5921A87157004B9CDA /* AnimeCollectionViewController.swift */,
-				6458BD6721A8A1F8004B9CDA /* AnimeViewController.swift */,
-				6458BD6821A8A1F8004B9CDA /* AnimeViewController.xib */,
+				646FD41D21B3E47A00E69A46 /* CollectionView */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		6458BD5B21A87646004B9CDA /* Cells */ = {
+		6458BD5B21A87646004B9CDA /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
 				6458BD6021A88D29004B9CDA /* FrameCollectionViewCell.swift */,
 				6458BD6121A88D29004B9CDA /* FrameCollectionViewCell.xib */,
 			);
-			path = Cells;
+			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 		6458BD6421A88DE2004B9CDA /* Extensions */ = {
@@ -128,6 +125,25 @@
 				6458BD6521A88E09004B9CDA /* CollectionViewExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		646FD41D21B3E47A00E69A46 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				64C35BAD21B3E3AD00FE6E5E /* Anime */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		64C35BAD21B3E3AD00FE6E5E /* Anime */ = {
+			isa = PBXGroup;
+			children = (
+				6458BD5B21A87646004B9CDA /* CollectionViewCells */,
+				6458BD5921A87157004B9CDA /* AnimeCollectionViewController.swift */,
+				6458BD6721A8A1F8004B9CDA /* AnimeViewController.swift */,
+				6458BD6821A8A1F8004B9CDA /* AnimeViewController.xib */,
+			);
+			path = Anime;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
