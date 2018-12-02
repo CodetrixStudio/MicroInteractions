@@ -19,6 +19,12 @@
 		6458BD6A21A8A1F8004B9CDA /* AnimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6458BD6821A8A1F8004B9CDA /* AnimeViewController.xib */; };
 		6458BD6B21A961E0004B9CDA /* MicroInteractions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6458BD5121A86964004B9CDA /* MicroInteractions.framework */; };
 		6458BD6C21A961E0004B9CDA /* MicroInteractions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6458BD5121A86964004B9CDA /* MicroInteractions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		646FD42121B3E5B500E69A46 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646FD41F21B3E5B500E69A46 /* NewsViewController.swift */; };
+		646FD42221B3E5B500E69A46 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646FD42021B3E5B500E69A46 /* NewsViewController.xib */; };
+		646FD42421B3F0A900E69A46 /* NewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646FD42321B3F0A900E69A46 /* NewsCollectionViewController.swift */; };
+		646FD42921B3F20400E69A46 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646FD42721B3F20400E69A46 /* ImageCollectionViewCell.swift */; };
+		646FD42A21B3F20400E69A46 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 646FD42821B3F20400E69A46 /* ImageCollectionViewCell.xib */; };
+		646FD42C21B3F29700E69A46 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646FD42B21B3F29700E69A46 /* ViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +55,12 @@
 		6458BD6521A88E09004B9CDA /* CollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtensions.swift; sourceTree = "<group>"; };
 		6458BD6721A8A1F8004B9CDA /* AnimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeViewController.swift; sourceTree = "<group>"; };
 		6458BD6821A8A1F8004B9CDA /* AnimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimeViewController.xib; sourceTree = "<group>"; };
+		646FD41F21B3E5B500E69A46 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		646FD42021B3E5B500E69A46 /* NewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
+		646FD42321B3F0A900E69A46 /* NewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewController.swift; sourceTree = "<group>"; };
+		646FD42721B3F20400E69A46 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		646FD42821B3F20400E69A46 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		646FD42B21B3F29700E69A46 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				6458BD6521A88E09004B9CDA /* CollectionViewExtensions.swift */,
+				646FD42B21B3F29700E69A46 /* ViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -131,8 +144,29 @@
 			isa = PBXGroup;
 			children = (
 				64C35BAD21B3E3AD00FE6E5E /* Anime */,
+				646FD41E21B3E58200E69A46 /* News */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		646FD41E21B3E58200E69A46 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				646FD42521B3F0E700E69A46 /* CollectionViewCells */,
+				646FD42321B3F0A900E69A46 /* NewsCollectionViewController.swift */,
+				646FD41F21B3E5B500E69A46 /* NewsViewController.swift */,
+				646FD42021B3E5B500E69A46 /* NewsViewController.xib */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		646FD42521B3F0E700E69A46 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				646FD42721B3F20400E69A46 /* ImageCollectionViewCell.swift */,
+				646FD42821B3F20400E69A46 /* ImageCollectionViewCell.xib */,
+			);
+			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 		64C35BAD21B3E3AD00FE6E5E /* Anime */ = {
@@ -207,7 +241,9 @@
 			files = (
 				6458BD4921A868D6004B9CDA /* LaunchScreen.storyboard in Resources */,
 				6458BD4621A868D6004B9CDA /* Assets.xcassets in Resources */,
+				646FD42221B3E5B500E69A46 /* NewsViewController.xib in Resources */,
 				6458BD6321A88D29004B9CDA /* FrameCollectionViewCell.xib in Resources */,
+				646FD42A21B3F20400E69A46 /* ImageCollectionViewCell.xib in Resources */,
 				6458BD6A21A8A1F8004B9CDA /* AnimeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,9 +256,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6458BD3D21A868D5004B9CDA /* AppDelegate.swift in Sources */,
+				646FD42421B3F0A900E69A46 /* NewsCollectionViewController.swift in Sources */,
 				6458BD5821A870FF004B9CDA /* TabBarController.swift in Sources */,
+				646FD42C21B3F29700E69A46 /* ViewExtensions.swift in Sources */,
 				6458BD5A21A87157004B9CDA /* AnimeCollectionViewController.swift in Sources */,
 				6458BD6621A88E09004B9CDA /* CollectionViewExtensions.swift in Sources */,
+				646FD42121B3E5B500E69A46 /* NewsViewController.swift in Sources */,
+				646FD42921B3F20400E69A46 /* ImageCollectionViewCell.swift in Sources */,
 				6458BD6221A88D29004B9CDA /* FrameCollectionViewCell.swift in Sources */,
 				6458BD6921A8A1F8004B9CDA /* AnimeViewController.swift in Sources */,
 			);

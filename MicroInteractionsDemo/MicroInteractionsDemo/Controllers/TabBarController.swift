@@ -14,10 +14,14 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
 
         viewControllers = [
+            UINavigationController(rootViewController: NewsViewController()),
             UINavigationController(rootViewController: AnimeViewController())
         ]
         
         tabBar.items?[0].image = UIImage(named: "icons8-popcorn-25");
-        tabBar.items?[0].title = "Movies";
+        tabBar.items?[0].title = "News";
+        
+        tabBar.items?[1].image = UIImage(named: "icons8-popcorn-25");
+        tabBar.items?[1].title = "Anime";
     }
 }

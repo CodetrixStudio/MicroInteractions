@@ -37,7 +37,7 @@
                                     <constraint firstItem="BOI-bN-CIa" firstAttribute="top" secondItem="i3M-Ia-D8R" secondAttribute="top" id="aCM-3s-vhY"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UPW-St-w3G">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UPW-St-w3G">
                                 <rect key="frame" x="100" y="28" width="145" height="223"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="145" id="6dK-H5-GAP"/>

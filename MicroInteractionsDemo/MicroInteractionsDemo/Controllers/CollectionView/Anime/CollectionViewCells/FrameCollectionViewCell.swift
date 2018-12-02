@@ -32,22 +32,13 @@ class FrameCollectionViewCell: UICollectionViewCell, Parallax {
         super.awakeFromNib()
         // Initialization code
         
-        setShadow(posterImageView.layer);
+        posterImageView.addShadow();
         
         backgroundContainerView.clipsToBounds = true;
         backgroundContainerView.layer.cornerRadius = 10;
         
         propertyAnimator = UIViewPropertyAnimator(duration: 5, curve: .easeOut, animations: animations);
         propertyAnimator.pausesOnCompletion = true;
-    }
-    
-    private func setShadow(_ layer: CALayer) {
-        layer.cornerRadius = 16;
-        clipsToBounds = false;
-        layer.shadowRadius = 6;
-        layer.shadowOffset = CGSize.zero;
-        layer.shadowOpacity = 0.5;
-        layer.shadowColor = UIColor.black.cgColor;
     }
     
     deinit {
@@ -66,7 +57,6 @@ class FrameCollectionViewCell: UICollectionViewCell, Parallax {
     // MARK: Parallax
     
     func parallaxChanged(amount: CGFloat, position: Position) {
-        print(String(format: "%@: %f", isCentered ? "true" : "false", amount));
 //        propertyAnimator.fractionComplete = 1 - amount.magnitude;
         var amount = amount;
         switch position {

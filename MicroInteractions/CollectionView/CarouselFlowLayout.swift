@@ -22,7 +22,7 @@ public class CarouselFlowLayout: UICollectionViewFlowLayout {
         }
     }
     
-    var scale: CGFloat = 0.66;
+    public var scale: CGFloat = 1;
     
     public override func prepare() {
         super.prepare();
@@ -78,16 +78,43 @@ public class CarouselFlowLayout: UICollectionViewFlowLayout {
         let index = ((collectionView.contentOffset.x + collectionView.contentInset.left) / (itemSize.width + minimumInteritemSpacing));
             
         attributesArray?.forEach({ (attributes) in
-            guard let parallax = collectionView.cellForItem(at: attributes.indexPath) as? Parallax else {return}
             let delta = CGFloat(currentCellIndex) - index;
             var position = Position.center;
+            
             if attributes.indexPath.item != currentCellIndex {
                 position = attributes.indexPath.item < currentCellIndex ? .left : .right;
+
+                let range = Range<CGFloat>(uncheckedBounds: (0, 1));
+                let newRange = Range<CGFloat>(uncheckedBounds: (scale, 1));
+                let normalizedDelta = delta.magnitude;
+                let normalizedScale = remap(value: normalizedDelta, range: range, newRange: newRange);
+                let directionSign: CGFloat = attributes.indexPath.item < currentCellIndex ? 1 : -1;
+
+                let translation = (itemSize.width - (itemSize.width * normalizedScale)) / 2 * directionSign;
+                attributes.transform = attributes.transform.translatedBy(x: translation, y: 0);
+                attributes.transform = attributes.transform.scaledBy(x: normalizedScale, y: normalizedScale);
+            } else {
+                let range = Range<CGFloat>(uncheckedBounds: (0, 1));
+                let newRange = Range<CGFloat>(uncheckedBounds: (scale, 1));
+                let normalizedDelta = 1 - delta.magnitude;
+                let normalizedScale = remap(value: normalizedDelta, range: range, newRange: newRange);
+                let directionSign: CGFloat = delta < 0 ? 1 : -1;
+
+                let translation = (itemSize.width - (itemSize.width * normalizedScale)) / 2 * directionSign;
+                attributes.transform = attributes.transform.translatedBy(x: translation, y: 0);
+                attributes.transform = attributes.transform.scaledBy(x: normalizedScale , y: normalizedScale);
             }
-            parallax.parallaxChanged(amount: delta, position: position);
+            
+            if let parallax = collectionView.cellForItem(at: attributes.indexPath) as? Parallax {
+                parallax.parallaxChanged(amount: delta, position: position);
+            }
         })
         
         return attributesArray;
+    }
+    
+    private func remap(value: CGFloat, range: Range<CGFloat>, newRange: Range<CGFloat>) -> CGFloat {
+        return newRange.lowerBound + (newRange.upperBound - newRange.lowerBound) * (value - range.lowerBound) / (range.upperBound - range.lowerBound);
     }
 }
 

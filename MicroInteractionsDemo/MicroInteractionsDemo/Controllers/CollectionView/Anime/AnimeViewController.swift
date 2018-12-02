@@ -20,11 +20,11 @@ class AnimeViewController: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage();
         navigationController?.navigationBar.isTranslucent = false;
         
-        let animeCollectionViewController = AnimeCollectionViewController();
-        addChild(animeCollectionViewController);
-        animeCollectionViewController.view.translatesAutoresizingMaskIntoConstraints = false;
-        containerView.addSubview(animeCollectionViewController.view);
-        animeCollectionViewController.view.constraintToFit(inContainerView: containerView);
-        animeCollectionViewController.didMove(toParent: self);
+        let collectionViewController = AnimeCollectionViewController();
+        addChild(collectionViewController);
+        collectionViewController.view.translatesAutoresizingMaskIntoConstraints = false;
+        containerView.addSubview(collectionViewController.view);
+        collectionViewController.view.constraintToFit(inContainerView: containerView);
+        collectionViewController.didMove(toParent: self);
     }
 }
